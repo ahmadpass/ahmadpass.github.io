@@ -18,19 +18,19 @@ async function loadTemplateLayout() {
     var index = $('#index').text();
 
     if (index == "0") {
-        await $("#navigation").load("shared/navigation.html");
+        await $("#navigation-0").load("shared/navigation.html");
         await $("#footer").load("shared/footer.html");
         await $("#postPreview").load("shared/post-preview.html");
     } else if (index == "1") {
-        await $("#navigation").load("../shared/navigation.html");
+        await $("#navigation-1").load("../shared/navigation.html");
         await $("#footer").load("../shared/footer.html");
         await $("#postPreview").load("../shared/post-preview.html");
     } else if (index == "2") {
-        await $("#navigation").load("../../shared/navigation.html");
+        await $("#navigation-2").load("../../shared/navigation.html");
         await $("#footer").load("../../shared/footer.html");
         await $("#postPreview").load("../../shared/post-preview.html");
     } else if (index == "3") {
-        await $("#navigation").load("../../../shared/navigation.html");
+        await $("#navigation-3").load("../../../shared/navigation.html");
         await $("#footer").load("../../../shared/footer.html");
         await $("#postPreview").load("../../../shared/post-preview.html");
     }
