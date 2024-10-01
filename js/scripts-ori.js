@@ -29,6 +29,10 @@ async function loadTemplateLayout() {
         await $("#navigation").load("../../shared/navigation.html");
         await $("#footer").load("../../shared/footer.html");
         await $("#postPreview").load("../../shared/post-preview.html");
+    } else if (index == "3") {
+        await $("#navigation").load("../../../shared/navigation.html");
+        await $("#footer").load("../../../shared/footer.html");
+        await $("#postPreview").load("../../../shared/post-preview.html");
     }
 
 
