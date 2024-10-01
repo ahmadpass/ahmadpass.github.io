@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5D4BBBZR3Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5D4BBBZR3Z');
+    </script>
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3969949518737115"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="This article will help you know about how to install and setup flutter for the first time, along with some practical examples." />
+    <meta name="author" content="" />
+    <meta name="keywords" content="flutter, dart, convert xml to json, xml, json">
+    <title>Dart: XML to JSON</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/web-logo.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../../css/styles.css" rel="stylesheet" />
+</head>
+
+<!-- Index to determine the load of navigation & footer in js file -->
+<div id="index" style="display: none;">3</div>
+
+<body>
+    <!-- Navigation-->
+    <div id="navigation"></div>
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('pexels-markus-winkler-1430818-4584830-xml.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Dart: XML to JSON</h1>
+                        <h2 class="subheading">Convert XML data into JSON format</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">Ahmad R.A</a>
+                            on March 08, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p align="justify">
+                        Have you ever found yourself in the situation where you need to populate data into a dart
+                        variable or object,
+                        but the input given is in XML format? Well, I have, and here I will share how to convert the XML
+                        data into
+                        JSON format for easily populated in the backend of your Flutter application! The case I am using
+                        here was
+                        specific to my task, so you can adjust it to your needs. But don't worry, the concept is the
+                        same.
+                    </p>
+
+                    <p align="justify">
+                        By the way, if you are still wondering what the difference is between XML format and JSON
+                        format, I think you can find this resource helpful: <a
+                            href="https://nordicapis.com/what-is-the-difference-between-json-and-xml/"
+                            target="_blank">What Is the Difference Between JSON and XML?</a> Now let's
+                        dive into the matter, shall we?
+                    </p>
+
+                    <h2 class="section-heading">xml2json</h2>
+                    <p align="justify">
+                        First of all, we need a package from Flutter <a href="https://pub.dev/"
+                            target="_blank">pub.dev</a> which is <b>xml2json</b>.
+                        You can go to the page and find the package. There is an instruction about how to install the
+                        package on your project.
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="pub-dev.png"
+                            alt="How to find the package on pub.dev" /></a>
+                    <span class="caption text-muted">Search for the package, and click on the first result shows
+                        up.</span>
+
+                    <a href="#!"><img class="img-fluid" src="pub-dev-instruction.png"
+                            alt="The instruction about how to install the package" /></a>
+                    <span class="caption text-muted">Follow the instructions.</span>
+
+                    <p align="justify">Just follow the instructions given on the page. Then after that, we can proceed
+                        to the next step!</p>
+
+                    <h2 class="section-heading">Step 1: Create a function</h2>
+                    <p align="justify">
+                        Now we need to create the function to parse the XML formated input and convert it into JSON
+                        format. To do this, I create
+                        a file in "lib/helper/" named "component.dart" to store my reusable component for the project.
+                        First we need to import the project to the
+                        file before using it.
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="xml2jsonpackage.png"
+                            alt="Import xml2json package to the project" /></a>
+                    <span class="caption text-muted">Since we also need a convert package to parse the XML data, it is
+                        important to import dart:convert also into the file</span>
+
+                    <p align="justify">Next, create the function using the xml2json package. The function will look
+                        around like this.</p>
+
+                    <div class="codeBackground">
+                        <pre>
+xml2JSON(String xmlData) {
+    final convert = Xml2Json();
+    
+    try {
+        // parse XML string
+        convert.parse(xmlData);
+        var json = convert.toParkerWithAttrs();
+        var data = jsonDecode(json);
+        return data;
+    } catch (e) {
+        return false;
+    }
+    }
+                    </pre>
+                    </div>
+                    <a href="#!"><img class="img-fluid" src="xml2jsonfunction.png" alt="xml2json function" /></a>
+                    <span class="caption text-muted">The function will pass the XML data in text format, then convert it
+                        inside the function. The function will return the data in JSON format.
+                    </span>
+
+
+
+
+                    <h2 class="section-heading">Step 2: Use the function</h2>
+
+                    <p align="justify">
+                        After we are done with the function, now we should use it in the backend. In my case, I have a
+                        folder "lib/views" with the file "result.dart" to process the result. Like usual, at the
+                        beginning of the file we need to import the "component.dart" file we used before in order to
+                        use the function.
+                    </p>
+
+
+                    <a href="#!"><img class="img-fluid" src="result-package.png" alt="Import function file" /></a>
+                    <span class="caption text-muted">Import the file where the function is</span>
+
+                    <p align="justify">Then, about how to use the function you can refer to the image below.</p>
+                    <a href="function-used.png" target="_blank"><img class="img-fluid" src="function-used.png"
+                            alt="Instruction about how to use the function" /></a>
+                    <span class="caption text-muted">Follow along with the instruction given in the image. Click the
+                        image to see the description clearly.</span>
+
+                    <p align="justify">
+                        The XML data being used in my case looked like this.</p>
+                    <div class="center">
+                        <a href="xmlresult.png" target="_blank"><img class="img-fluid" src="xmlresult.png"
+                                alt="Example of XML data" /></a>
+                    </div>
+                    <span class="caption text-muted">For confidentiality, I censored the value of the data. But you can
+                        still see the outline.</span>
+
+                    <p align="justify">
+                        The XML data mentioned above entitled "resValidateFakturPm". In the image prior the image above
+                        we have already define the variable "data". Actually,
+                        we can directly use variable "json" to proceed to the next step. But I feel the urge to create a
+                        null check in case the data did not convert properly.
+                        I am using this code to do the checking:
+                    </p>
+
+                    <div class="codeBackground">
+                        <pre>
+if (json != false) {
+    try {
+        data = json['resValidateFakturPm']; //if the data converted properly, store the result from variable "json" into "data"
+        isConvertSuccess = true;
+    } catch (e) {
+        isConvertSuccess = false;
+    }
+    } else {
+        isConvertSuccess = false;
+    }
+                    </pre>
+                    </div>
+
+
+                    <p align="justify">
+                        You can freely add any logic you like in case the convertion is failed. If you are done, now we
+                        should go to the last step.</p>
+
+
+                    <h2 class="section-heading">Step 3: Populate the data into dart variable/object</h2>
+
+                    <p align="justify">
+                        Now if all the step before has been properly followed, we can assume that the "data" variable
+                        has already contain the data in JSON format.
+                        In order to populate the JSON data into the variable or object, we can use this format:
+                    </p>
+
+                    <div class="codeBackground">
+                        <pre>
+&#x3C;variable&#x3E;[JSON key]
+                    </pre>
+                    </div>
+
+                    <p align="justify">For example, we have "data" variable which we used to store the JSON. We also
+                        know there is a tag named &#x3C;nomorFaktur&#x3E;
+                        in the XML we inspect before, so this means there is also JSON key which named "nomorFaktur". We
+                        can
+                        put this value into a variable like the code below.
+                    </p>
+
+                    <div class="codeBackground"></div>
+                    <pre>
+var nomorFaktur = data['nomorFaktur'];
+                    </pre>
+                    <p align="justify">Or we
+                        can put ALL the values and show it in our application
+                        using "defaultRowList" (since there are many), as coded below.
+                    </p>
+
+                    <div class="codeBackground"></div>
+                    <pre>
+Container(
+    alignment: Alignment.center,
+    margin: EdgeInsets.symmetric(vertical: 24),
+    child: Text(
+        style: GoogleFonts.roboto(
+        textStyle: TextStyle(
+            color: defaultTextClr,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+        ),
+        ),
+        "Data Faktur Pajak",
+    ),
+    ),
+    defaultRowList('Kode Jenis Transaksi',
+        data['kdJenisTransaksi']),
+    defaultRowList(
+        'Fungsi Pengganti', data['fgPengganti']),
+    defaultRowList(
+        'Nomor Faktur', data['nomorFaktur']),
+    defaultRowList(
+        'Tanggal Faktur', data['tanggalFaktur']),
+    defaultRowList(
+        'NPWP Penjual', data['npwpPenjual']),
+    defaultRowList(
+        'Nama Penjual', data['namaPenjual']),
+    defaultRowList(
+        'Alamat Penjual', data['alamatPenjual']),
+    defaultRowList('NPWP Lawan Transaksi',
+        data['npwpLawanTransaksi']),
+    defaultRowList('Nama Lawan Transaksi',
+        data['namaLawanTransaksi']),
+    defaultRowList('Alamat Lawan Transaksi',
+        data['alamatLawanTransaksi']),
+    defaultRowList('Jumlah DPP',
+        'Rp ${commify(data['jumlahDpp'])},-'),
+    defaultRowList('Jumlah PPN',
+        'Rp ${commify(data['jumlahPpn'])},-'),
+    defaultRowList('Jumlah PPnBM',
+        'Rp ${commify(data['jumlahPpnBm'])},-'),
+    defaultRowList('Status Approval',
+        data['statusApproval']),
+    defaultRowList(
+        'Status Faktur', data['statusFaktur']),
+    defaultRowList(
+        'Referensi', data['referensi']),
+    defaultRowList('Detail Transaksi', ''),
+    defaultRowListDetail(
+        'Nama', data['detailTransaksi']['nama']),
+    defaultRowListDetail('Harga Satuan',
+        'Rp ${commify(data['detailTransaksi']['hargaSatuan'])},-'),
+    defaultRowListDetail('Jumlah Barang',
+        data['detailTransaksi']['jumlahBarang']),
+    defaultRowListDetail('Harga Total',
+        'Rp ${commify(data['detailTransaksi']['hargaTotal'])},-'),
+    defaultRowListDetail('Diskon',
+        data['detailTransaksi']['diskon']),
+    defaultRowListDetail('DPP',
+        'Rp ${commify(data['detailTransaksi']['dpp'])},-'),
+    defaultRowListDetail('PPN',
+        'Rp ${commify(data['detailTransaksi']['ppn'])},-'),
+    defaultRowListDetail('Tarif PPnBM',
+        'Rp ${commify(data['detailTransaksi']['tarifPpnbm'])},-'),
+    defaultRowListDetail('PPnBM',
+        'Rp ${commify(data['detailTransaksi']['ppnbm'])},-')
+                    </pre>
+
+                    <p align="justify">It's up to you now. Good luck!
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <!-- Footer-->
+    <div id="footer"></div>
+
+    <!-- JQuery JS-->
+    <script src="../../../js/jquery-3.6.3.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../../../js/scripts.js"></script>
+
+    <!-- <script>
+        function getPics() { }
+        const imgs = document.querySelectorAll('.gallery img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    </script> -->
+
+</body>
+
+</html>
