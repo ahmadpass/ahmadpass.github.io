@@ -21,11 +21,15 @@ async function loadTemplateLayout() {
         await $("#navigation").load("shared/navigation.html");
         await $("#footer").load("shared/footer.html");
         await $("#postPreview").load("shared/post-preview.html");
-    } else {
+    } else if (index == "1") {
         await $("#navigation").load("../shared/navigation.html");
         await $("#footer").load("../shared/footer.html");
         await $("#postPreview").load("../shared/post-preview.html");
-    };
+    } else if (index == "2") {
+        await $("#navigation").load("../../shared/navigation.html");
+        await $("#footer").load("../../shared/footer.html");
+        await $("#postPreview").load("../../shared/post-preview.html");
+    }
 
 
 
