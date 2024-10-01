@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5D4BBBZR3Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5D4BBBZR3Z');
+    </script>
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3969949518737115"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="This article will help you know about how to install and setup flutter for the first time, along with some practical examples." />
+    <meta name="author" content="" />
+    <meta name="keywords"
+        content="flutter, install, setup, flutter install, flutter setup, 101, flutter 101, configuration, flutter configuration, sdk, flutter sdk, flutter sdk download, download, flutter download, path, flutter path, guide, flutter guide">
+    <title>Flutter Install & Setup</title>
+    <link rel="icon" type="image/x-icon" href="../assets/web-logo.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+</head>
+
+<!-- Style -->
+<style>
+    a:link {
+        color: #0000EE;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: green;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #CAE4A1;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    pre {
+        text-align: left;
+        white-space: pre-line;
+    }
+
+    .justify {
+        text-align: justify;
+    }
+
+    .codeBackground {
+        background-color: #f5f2f0;
+        padding: 15px;
+        padding-bottom: 5px;
+    }
+
+    .resource-author-avatar {
+        border-radius: 100%;
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        display: block;
+        overflow: hidden;
+        margin: 0 10px 0 0;
+    }
+
+    .size-14 {
+        font-size: 14px;
+    }
+
+    .faded {
+        opacity: 0.75;
+    }
+</style>
+
+<body>
+    <!-- Navigation-->
+    <div id="navigation"></div>
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('../assets/img/coding-man.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Flutter 101: A Rookie Guide</h1>
+                        <h2 class="subheading">Install & Setup</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">Ahmad R.A</a>
+                            on December 09, 2022
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p align="justify">Maybe you have been wondering about how fast the software industries grows up
+                        lately in the last decade. At the time now, theres many UI framework on sight for running
+                        beautiful App that can run on multiple
+                        platform. And yes, Flutter is one of them!
+                    </p>
+
+                    <!-- <div class="mt-4 d-flex align-items-center">
+                        <div><img class="resource-author-avatar"
+                                src="https://blog.tryhackme.com/content/images/2022/11/Untitled-design-1.jpg"
+                                alt="Ahmad R. Andrianto"></div>
+                        <div>
+                            <div>Ahmad R. Andrianto</div>
+                            <div class="size-14 faded"><span id="resource-date">Jan 31, 2023</span> <span>•</span> <span
+                                    id="resource-time">5 min read</span></div>
+                        </div>
+                        <div></div>
+                    </div> -->
+                    <p align="justify">
+                        This article will help you know about how to install
+                        and setup flutter for the first time, along with some practical examples.
+                    </p>
+
+                    <h2 class="section-heading">Preparation</h2>
+                    <p align="justify">Before anything else, we should prepared for what will come next. On minimal
+                        requirement based on <a href="https://docs.flutter.dev/get-started/install/windows"
+                            target="_blank">Flutter
+                            docs</a>, you should prepare:</p>
+                    <ul>
+                        <li class="justify">Windows 10 or later (64-bit), x86-64 based <span
+                                style="font-weight:bold">operating
+                                systems</span></li>
+                        <li class="justify"><span style="font-weight:bold">Disk space</span> at least 1.64 GB (does not
+                            include disk
+                            space for IDE/tools)</li>
+                        <li class="justify">
+                            Some <span style="font-weight:bold">tools</span> flutter depends on, like <a
+                                href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-windows-powershell"
+                                target="_blank">
+                                Windows PowerShell 5.0
+                            </a> or newer (this is pre-installed with Windows 10) and <a
+                                href="https://git-scm.com/download/win" target="_blank">
+                                Git for Windows
+                            </a> 2.x, with the <span style="font-weight:bold">Use Git from the Windows Command
+                                Prompt
+                                option</span>
+                        </li>
+                    </ul>
+                    <p align="justify">Now, after our PC/laptop is well prepared, it's time to do the installation
+                        process!</p>
+                    <!-- <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of
+                        tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet
+                        far too little for the next ten.</blockquote>
+                    <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is
+                        a historical process which mankind is carrying out in accordance with the natural laws of human
+                        development.</p> -->
+
+                    <h2 class="section-heading">Step 1: Flutter SDK Download</h2>
+                    <p align="justify">
+                        As the first step, we should install the SDK on Flutter official website here: <a
+                            href="https://docs.flutter.dev/get-started/install" target="_blank">Flutter: Get SDK</a>
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/Step 1 - Get SDK.jpg"
+                            alt="Step 1 - Get SDK Image" /></a>
+                    <span class="caption text-muted">You should see this screen, now choose the right operating system
+                        you are using</span>
+
+                    <p align="justify">Next, download the SDK. I will demonstrate using Windows for the next process of
+                        installation. If you are using the different OS, don't worries, theres an instruction on
+                        documentation that will help you. Just click on your prefered OS.</p>
+
+                    <h2 class="section-heading">Step 2: Add Flutter into The Path</h2>
+
+                    <p align="justify">After the download finished, in order for us to be able using Flutter command on
+                        regular windows console (such as command prompt), we need to add Flutter to the path
+                        environtment variable. First,
+                        navigate to your downloaded zip file and extract the zip file to your preffered location. In my
+                        case,
+                        I create a new folder 'tooling' inside a folder 'dev' in local disk C and put the extraction
+                        folder there.</p>
+                    <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/SDKExtractionFolder.jpg"
+                            alt="Extraction Folder" /></a>
+                    <span class="caption text-muted">Here I change the extraction folder name to 'flutter'</span>
+
+                    <p align="justify">Then, navigate to the 'bin' folder and copy the path into that folder.</p>
+                    <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/binPath.jpg"
+                            alt="Copying Folder Path" /></a>
+                    <span class="caption text-muted">Look at the hightlighted path, copy that</span>
+
+                    <p align="justify">
+                        Next, click Windows and search for 'Edit the system environment variables',
+                        open
+                        it and then click 'Environtment Variables...' on the bottom right corner.</p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/EnvirontmentVariables.jpg"
+                                alt="Environtment Variables" /></a>
+                    </div>
+                    <span class="caption text-muted">Click the blue hightlighted ones</span>
+
+                    <p align="justify">
+                        After that go for 'User variable for [Your User Name]' and click on 'Path'</p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/PathEdit.jpg"
+                                alt="Add to Path Pt.1" /></a>
+                    </div>
+                    <span class="caption text-muted">Click the blue hightlighted ones</span>
+
+                    <p align="justify">
+                        Click on 'New' button, then paste your bin path</p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/addNewVariable.jpg"
+                                alt="Add to Path Pt.2" /></a>
+                    </div>
+                    <span class="caption text-muted">Paste it here</span>
+
+                    <p align="justify">
+                        Now, do the same step for the .pub-cache file</p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/pubCache.jpg"
+                                alt="Add to Path Pt.3" /></a>
+                    </div>
+                    <span class="caption text-muted">Just like the step before</span>
+
+                    <p align="justify">
+                        Done, finishing it by click the 'OK' button.</p>
+
+
+                    <h2 class="section-heading">Step 3: Check The Diagnostic, Flutter Doctor!</h2>
+
+                    <p align="justify">After successfully added Flutter into the path, we should check if there is any
+                        platform
+                        dependencies
+                        Flutter needed you haven't install yet. First, open your Command Prompt. If you already have
+                        opened
+                        the Command Prompt before the Step 2, you need to close that Command Prompt and open a new one
+                        in order
+                        for the changes we made at Step 2 took place. Next, run the following command:</p>
+
+                    <div class="codeBackground">
+                        <pre>
+                            flutter doctor    
+                    </pre>
+                    </div>
+
+                    <p align="justify">Then enter and see how it run. The output should be like this:</p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/flutterDoctor.jpg"
+                                alt="Flutter Doctor Output" /></a>
+                    </div>
+                    <span class="caption text-muted">If you have already install all dependencies, it should finished
+                        with no issues.</span>
+
+                    <p align="justify">If you found any issues, the Flutter Doctor will show you the detail about your
+                        issues. That will
+                        give you a clue how to solve that. But most of it because you haven't installed the dependencies
+                        needed.
+                        Here are the list of dependencies we are needed:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <a href="https://www.google.com/chrome/?brand=YTUH&gclid=CjwKCAiA-dCcBhBQEiwAeWidtRVXzb3uyVa_Lf0t_oJtn_Rs2C4d7_EPxWytIY1rxb_hfLTB5MVffxoCbZcQAvD_BwE&gclsrc=aw.ds"
+                                target="_blank"> Chrome Browser </a>
+                        </li>
+                        <li>
+                            <a href="https://visualstudio.microsoft.com/downloads/
+                            target=" _blank"> Visual Studio </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.android.com/" target="_blank"> Android Studio </a>
+                        </li>
+                        <li>
+                            <a href="https://code.visualstudio.com/download" target="_blank"> Visual Studio Code </a>
+                        </li>
+                    </ul>
+
+                    <p align="justify">In case you are never download SDK Manager before, you will got this
+                        issue:
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+                            [X] Android toolchain - develop for Android devices
+                                X Unable to locate Android SDK.
+                                Install Android Studio from:https://developer.android.com/studio/index.html
+                                On first launch it will assist you in installing the Android SDK components.
+                                (or visit https://flutter.dev/docs/get-started/install/windows#android-setup 
+                                for detailed instructions).If the Android SDK has been installed to a custom
+                                location, please use `flutter config --android-sdk` to update to that location.
+                    </pre>
+                    </div>
+
+                    <p align="justify">What you have to do is:</p>
+                    <ol>
+                        <li>
+                            Install <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank"> Java
+                                JDK </a>
+                        </li>
+                        <li>
+                            Install <a href="https://developer.android.com/studio/command-line/sdkmanager"
+                                target="_blank"> SDK Manager </a>
+                        </li>
+                    </ol>
+
+                    <p align="justify">
+                        The alternative solution for this issue, you can simply install SDK Manager using Android Studio
+                        you have
+                        downloaded before. First, open your Android Studio, click 'More Actions', and select 'SDK
+                        Manager' on dropdown
+                        options.
+                    </p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/sdkManager.jpg"
+                                alt="SDK Manager on Android Studio" /></a>
+                    </div>
+                    <span class="caption text-muted">Here is the start page of the Android Studio</span>
+
+                    <p align="justify"> Now, navigate into 'SDK Tools' tab, and checked the neccessary tools for
+                        install.
+                        Then, click 'Apply' and 'OK' for implement the changes. Click 'OK' on confirmation Pop Up.
+                    </p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/sdkInstall.jpg"
+                                alt="SDK Installation" /></a>
+                    </div>
+                    <span class="caption text-muted">Checked the hightlighted ones</span>
+
+                    <p align="justify">Now, try to run again the diagnostic using additional command to accept the
+                        licenses:</p>
+
+                    <div class="codeBackground">
+                        <pre>
+                            Flutter doctor --android-licenses    
+                    </pre>
+                    </div>
+                    <p>
+
+                    </p>
+                    <div class="center">
+                        <a href="#!"><img class="img-fluid" src="../assets/img/articles/F1/acceptedLicenses.jpg"
+                                alt="SDK accept licenses" /></a>
+                    </div>
+                    <span class="caption text-muted">This will run the doctor and also accepted the SDK licenses</span>
+
+                    <p align="justify"> And now you should be done with the installation process. Happy coding :)
+                    </p>
+
+                    <!-- Footer -->
+                    <!-- <p>
+                        Placeholder text by
+                        <a href="http://spaceipsum.com/">Space Ipsum</a>
+                        &middot; Images by
+                        <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
+                    </p> -->
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer-->
+    <div id="footer"></div>
+
+    <!-- JQuery JS-->
+    <script src="../js/jquery-3.6.3.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+
+    <script>
+        function getPics() { }
+        const imgs = document.querySelectorAll('.gallery img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+
+</html>
