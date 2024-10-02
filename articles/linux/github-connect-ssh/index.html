@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5D4BBBZR3Z"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5D4BBBZR3Z');
+    </script>
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3969949518737115"
+        crossorigin="anonymous"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="This article give you guidance about how to connect into your github account using ssh." />
+    <meta name="author" content="" />
+    <meta name="keywords" content="github, ssh, linux, terminal">
+    <title>GitHub: SSH Connect</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/web-logo.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../../css/styles.css" rel="stylesheet" />
+</head>
+
+<!-- Index to determine the load of navigation & footer in js file -->
+<div id="index" style="display: none;">3</div>
+
+<body>
+    <!-- Navigation-->
+    <div id="navigation"></div>
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('repo-wallpaper.png')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>GitHub: SSH Connect</h1>
+                        <h2 class="subheading">Easily connect your GitHub account into your PC using SSH
+                        </h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">Ahmad R.A</a>
+                            on October 2, 2024
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p align="justify">
+                        For Linux users, accessing your GitHub account using SSH (Secure Shell) requires a bit of work,
+                        especially if you are using a command line.
+                        It will not work by just providing the username and password. Prior, we needed to provide our
+                        SSH key (public key) to GitHub, so the
+                        connection could be maintained.
+                    </p>
+
+                    <p align="justify">
+                        Before we begin, we should check whether Git is already installed on our terminal.
+                    </p>
+
+                    <div class="codeBackground">
+                        <pre>
+nate@PC-1701:~$ git --version
+git version 2.43.0
+                    </pre>
+                    </div>
+                    <p align="justify">
+                        Then, let's try to push some content into our GitHub account using a command line. It should
+                        look like this.
+                    </p>
+
+                    <div class="codeBackground">
+                        <pre>
+nate@PC-1701: ~/Documents/Projects/WebPage/ahmadpass.github.io$ git push -u origin main
+Username for 'https://github.com': ahmadpass
+Password for 'https://ahmadpass@github.com':
+remote: Permission to ahmadpass/ahmadpass.github.io.git denied to ahmadpass.
+fatal: unable to access 'https://github.com/ahmadpass/ahmadpass.github.io/': The requested URL returned error: 403
+                    </pre>
+                    </div>
+                    <a href="#!"><img class="img-fluid" src="remote-denied.png" alt="Connection denied" /></a>
+                    <span class="caption text-muted">Connection to our GitHub account denied</span>
+                    <p align="justify"></p>
+                    When we try to connect to our GitHub account, we will be prompted to enter our username and
+                    password. Although now the password has already been replaced by a token for security measures (See
+                    <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
+                        target="_blank"><i>Personal Access Tokens</i></a>
+                    for more info). If
+                    you haven't already set up a token, follow from the Step 1. If you are done with the token,
+                    you can skip to Step 2​.
+                    </p>
+
+                    <h2 class="section-heading">Step 1: Set Up GitHub token</h2>
+                    <p align="justify">
+                        To do this, navigate to your GitHub account > Click on your <b>Profile</b> > <b>Settings</b> >
+                        On the left
+                        side, below "Archives", click on <b>Developer settings</b>.
+                    </p>
+
+                    <a href="generate-new-token.png" target="_blank"><img class="img-fluid" src="generate-new-token.png"
+                            alt="Generate new token" /></a>
+                    <span class="caption text-muted">Click on "Generate new token" to create ones</span>
+
+                    <p align="justify">
+                        Choose <b>Generate new token</b> > <b>new personal access token (classic)</b>. Next we will be
+                        prompted to enter our password. Then create your
+                        new token by filling out the detail as depicted below.
+                    </p>
+                    <a href="new-token.png" target="_blank"><img class="img-fluid" src="new-token.png"
+                            alt="Generate new token - filling the details" /></a>
+                    <span class="caption text-muted">Fill out the details as described</span>
+
+                    <p align="justify">
+                        When you are done, click on <b>Generate token</b> button at the bottom. Then you will see this.
+                    </p>
+
+                    <a href="copy-token.png" target="_blank"><img class="img-fluid" src="copy-token.png"
+                            alt="Copy the generated token" /></a>
+                    <span class="caption text-muted">Copy the generated token</span>
+
+                    <p align="justify">
+                        Copy the generated token, and stored it somewhere safe as it will be dissapear once you leave
+                        the page. We will need this token
+                        later when we are going to connect again using GitHub API from the command line.
+                    </p>
+
+
+                    <h2 class="section-heading">Step 2: Create the SSH keys</h2>
+
+                    <p align="justify"></p>
+                    First, make sure the ssh-agent is running by using this command.
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+nate@PC-1701:~$ eval "$(ssh-agent -s)"
+Agent pid 23443                            
+                        </pre>
+                    </div>
+
+                    <p align="justify">
+                        Now we are going to create a pair of SSH keys, using the command below.
+                    </p>
+
+                    <div class="codeBackground">
+                        <pre>
+ssh-keygen -t rsa
+                        </pre>
+                    </div>
+
+                    <p align="justify">
+                        The "t" switch above specify the type of encryption key, which is RSA. After running the
+                        command, we
+                        will be prompted to enter the file name and passphrase.
+                        You can freely named the key file. In this case, I will go with "id_rsa". Then you can skip or
+                        fill
+                        the passphrase. This is used to encrypt the SSH key, to make
+                        your key more secure.
+                    </p>
+
+                    <a href="#!"><img class="img-fluid" src="key-gen-result.png" alt="key-gen result" /></a>
+                    <span class="caption text-muted">The result of the command above</span>
+
+                    <p align="justify">
+                        By default, the generated key should be stored inside "/home/&#60;User&#62;/.ssh" folder. We can
+                        see now
+                        there is a pair of keys. The id_rsa is the private key, we should never share this with anyone.
+                        While the id_rsa.pub is the one we
+                        are going to share with our GitHub account.
+                    </p>
+
+                    <p align="justify">
+                        Now we should add the private key identities to the authentication agent (ssh-agent), using the
+                        command below.
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+ssh-add &#60;path to private key&#62;
+                        </pre>
+                    </div>
+
+                    <a href="#!"><img class="img-fluid" src="ssh-add.png" alt="ssh-add" /></a>
+                    <span class="caption text-muted">Add the private key to ssh-agent</span>
+
+                    <p align="justify">This way, we will be able to authenticate the connection from GitHub API. To see
+                        the
+                        list of private key on the ssh-agent we can use the command:
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+ssh-add -l
+                        </pre>
+                    </div>
+                    <a href="#!"><img class="img-fluid" src="ssh-agent-list.png" alt="ssh-agent list" /></a>
+                    <span class="caption text-muted">The private key on ssh-agent</span>
+
+                    <h2 class="section-heading">Step 3: Associate the SSH key to the GitHub account</h2>
+
+                    <p align="justify">
+                        Now go back to the location where we put the public key before. In this case, the key is stored
+                        in
+                        "/home/&#60;User&#62;/.ssh".
+                        See the content of the id_rsa.pub (don't reverse it with the private ones) using "cat" or "vim"
+                        command, then copy it. Now
+                        go to your GitHub account > Click on your <b>Profile</b> > <b>Settings</b> > On the left side
+                        under
+                        "Access" you will
+                        find <b>SSH and GPG keys</b>, click
+                        on it > On "SSH Keys" sub tab, click on <b>New SSH key</b>.
+                    </p>
+
+                    <a href="#!"><img class="img-fluid" src="add-new-ssh.png" alt="add new ssh key" /></a>
+                    <span class="caption text-muted">Add new SSH key on GitHub account</span>
+                    <p align="justify">
+                        Now you can paste the content of your public key inside the <b>Key</b> text box. Then click on
+                        <b>Add SSH key</b>
+                        after you are done with the details.
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="associated-ssh-key.png" alt="Associate SSH Key" /></a>
+                    <span class="caption text-muted">Now your public key has been associated with the GitHub
+                        account</span>
+
+                    <p align="justify">
+                        Compare the SSH key with the output from
+                        <code>ssh-add -l</code> command before to make sure it's the correct key.
+                    </p>
+
+                    <h2 class="section-heading">Connect!</h2>
+                    <p align="justify">
+                        Now let's we try to push our repository again using the command <code>git push</code>. Enter the
+                        username and password if prompted.
+                        <b>Remember, use the generated token we created previously in place of your password</b>.
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="git-push.png" alt="Tryng to connect" /></a>
+                    <span class="caption text-muted">Now the connection is not being denied</span>
+
+                    <p align="justify">
+                        You should now be able to connect to your GitHub account using SSH. Doesn't seem too
+                        complicated, doesn't it?
+                    </p>
+
+                    <h3>Extra</h3>
+                    <p align="justify">
+                        If you are tryng to connect to your GitHub from Visual Studio Code, and faces this issue:
+                    </p>
+                    <a href="#!"><img class="img-fluid" src="vscode-git.png"
+                            alt="Issue while tryng to connect on vs code" /></a>
+                    <span class="caption text-muted">Issue while tryng to connect using vs code</span>
+
+                    <p align="justify">
+                        Check the configured user.name and user.email using this command.
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+git config --list --show-origin
+                        </pre>
+                    </div>
+
+                    <p align="justify">
+                        If the value is different than you expected, or even empty, configure the correct value using
+                        this command.
+                    </p>
+                    <div class="codeBackground">
+                        <pre>
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+                        </pre>
+                    </div>
+
+                    <h3>Refferences</h3>
+                    <ul>
+                        <li class="justify"><a
+                                href="https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey">
+                                Error: Permission denied (publickey)</a></li>
+                        <li class="justify"><a
+                                href="https://stackoverflow.com/questions/26505980/github-permission-denied-ssh-add-agent-has-no-identities">
+                                Github permission denied: ssh add agent has no identities</a></li>
+                        <li class="justify"><a
+                                href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">
+                                Getting Started - First-Time Git Setup</a></li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </article>
+
+    <!-- Footer-->
+    <div id="footer"></div>
+
+    <!-- JQuery JS-->
+    <script src="../../../js/jquery-3.6.3.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../../../js/scripts.js"></script>
+
+    <!-- <script>
+        function getPics() { }
+        const imgs = document.querySelectorAll('.gallery img');
+        const fullPage = document.querySelector('#fullpage');
+
+        imgs.forEach(img => {
+            img.addEventListener('click', function () {
+                fullPage.style.backgroundImage = 'url(' + img.src + ')';
+                fullPage.style.display = 'block';
+            });
+        });
+    </script> -->
+
+</body>
+
+</html>
