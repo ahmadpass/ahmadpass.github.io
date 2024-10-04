@@ -87,7 +87,9 @@ codeBackground {
   position: fixed;
   bottom: 20px;
   right: 30px;
-  z-index: 99;
+  /* z-index: 99; */
+  z-index: -1;
+  position: relative;
   font-size: 18px;
   border: none;
   outline: none;
