@@ -99,7 +99,9 @@ remote: Permission to ahmadpass/ahmadpass.github.io.git denied to ahmadpass.
 fatal: unable to access 'https://github.com/ahmadpass/ahmadpass.github.io/': The requested URL returned error: 403
                     </pre>
                     </div>
-                    <a href="#!"><img class="img-fluid" src="remote-denied.png" alt="Connection denied" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="remote-denied.png" alt="Connection denied" /></a>
+                    </div>
                     <span class="caption text-muted">Connection to our GitHub account denied</span>
                     <p align="justify"></p>
                     When we try to connect to our GitHub account, we will be prompted to enter our username and
@@ -118,8 +120,10 @@ fatal: unable to access 'https://github.com/ahmadpass/ahmadpass.github.io/': The
                         side, below "Archives", click on <b>Developer settings</b>.
                     </p>
 
-                    <a href="generate-new-token.png" target="_blank"><img class="img-fluid" src="generate-new-token.png"
-                            alt="Generate new token" /></a>
+                    <div align="center">
+                        <a href="generate-new-token.png" target="_blank"><img class="img-fluid"
+                                src="generate-new-token.png" alt="Generate new token" /></a>
+                    </div>
                     <span class="caption text-muted">Click on "Generate new token" to create ones</span>
 
                     <p align="justify">
@@ -127,16 +131,20 @@ fatal: unable to access 'https://github.com/ahmadpass/ahmadpass.github.io/': The
                         prompted to enter our password. Then create your
                         new token by filling out the detail as depicted below.
                     </p>
-                    <a href="new-token.png" target="_blank"><img class="img-fluid" src="new-token.png"
-                            alt="Generate new token - filling the details" /></a>
+                    <div align="center">
+                        <a href="new-token.png" target="_blank"><img class="img-fluid" src="new-token.png"
+                                alt="Generate new token - filling the details" /></a>
+                    </div>
                     <span class="caption text-muted">Fill out the details as described</span>
 
                     <p align="justify">
                         When you are done, click on <b>Generate token</b> button at the bottom. Then you will see this.
                     </p>
 
-                    <a href="copy-token.png" target="_blank"><img class="img-fluid" src="copy-token.png"
-                            alt="Copy the generated token" /></a>
+                    <div align="center">
+                        <a href="copy-token.png" target="_blank"><img class="img-fluid" src="copy-token.png"
+                                alt="Copy the generated token" /></a>
+                    </div>
                     <span class="caption text-muted">Copy the generated token</span>
 
                     <p align="justify">
@@ -178,7 +186,9 @@ ssh-keygen -t rsa
                         your key more secure.
                     </p>
 
-                    <a href="#!"><img class="img-fluid" src="key-gen-result.png" alt="key-gen result" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="key-gen-result.png" alt="key-gen result" /></a>
+                    </div>
                     <span class="caption text-muted">The result of the command above</span>
 
                     <p align="justify">
@@ -199,7 +209,9 @@ ssh-add &#60;path to private key&#62;
                         </pre>
                     </div>
 
-                    <a href="#!"><img class="img-fluid" src="ssh-add.png" alt="ssh-add" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="ssh-add.png" alt="ssh-add" /></a>
+                    </div>
                     <span class="caption text-muted">Add the private key to ssh-agent</span>
 
                     <p align="justify">This way, we will be able to authenticate the connection from GitHub API. To see
@@ -211,7 +223,9 @@ ssh-add &#60;path to private key&#62;
 ssh-add -l
                         </pre>
                     </div>
-                    <a href="#!"><img class="img-fluid" src="ssh-agent-list.png" alt="ssh-agent list" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="ssh-agent-list.png" alt="ssh-agent list" /></a>
+                    </div>
                     <span class="caption text-muted">The private key on ssh-agent</span>
 
                     <h2 class="section-heading">Step 3: Associate the SSH key to the GitHub account</h2>
@@ -229,14 +243,18 @@ ssh-add -l
                         on it > On "SSH Keys" sub tab, click on <b>New SSH key</b>.
                     </p>
 
-                    <a href="#!"><img class="img-fluid" src="add-new-ssh.png" alt="add new ssh key" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="add-new-ssh.png" alt="add new ssh key" /></a>
+                    </div>
                     <span class="caption text-muted">Add new SSH key on GitHub account</span>
                     <p align="justify">
                         Now you can paste the content of your public key inside the <b>Key</b> text box. Then click on
                         <b>Add SSH key</b>
                         after you are done with the details.
                     </p>
-                    <a href="#!"><img class="img-fluid" src="associated-ssh-key.png" alt="Associate SSH Key" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="associated-ssh-key.png" alt="Associate SSH Key" /></a>
+                    </div>
                     <span class="caption text-muted">Now your public key has been associated with the GitHub
                         account</span>
 
@@ -251,7 +269,9 @@ ssh-add -l
                         username and password if prompted.
                         <b>Remember, use the generated token we created previously in place of your password</b>.
                     </p>
-                    <a href="#!"><img class="img-fluid" src="git-push.png" alt="Tryng to connect" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="git-push.png" alt="Tryng to connect" /></a>
+                    </div>
                     <span class="caption text-muted">Now the connection is not being denied</span>
 
                     <p align="justify">
@@ -263,8 +283,10 @@ ssh-add -l
                     <p align="justify">
                         If you are tryng to connect to your GitHub from Visual Studio Code, and faces this issue:
                     </p>
-                    <a href="#!"><img class="img-fluid" src="vscode-git.png"
-                            alt="Issue while tryng to connect on vs code" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="vscode-git.png"
+                                alt="Issue while tryng to connect on vs code" /></a>
+                    </div>
                     <span class="caption text-muted">Issue while tryng to connect using vs code</span>
 
                     <p align="justify">

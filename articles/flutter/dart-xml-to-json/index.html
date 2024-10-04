@@ -92,13 +92,17 @@
                         You can go to the page and find the package. There is an instruction about how to install the
                         package on your project.
                     </p>
-                    <a href="#!"><img class="img-fluid" src="pub-dev.png"
-                            alt="How to find the package on pub.dev" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="pub-dev.png"
+                                alt="How to find the package on pub.dev" /></a>
+                    </div>
                     <span class="caption text-muted">Search for the package, and click on the first result shows
                         up.</span>
 
-                    <a href="#!"><img class="img-fluid" src="pub-dev-instruction.png"
-                            alt="The instruction about how to install the package" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="pub-dev-instruction.png"
+                                alt="The instruction about how to install the package" /></a>
+                    </div>
                     <span class="caption text-muted">Follow the instructions.</span>
 
                     <p align="justify">Just follow the instructions given on the page. Then after that, we can proceed
@@ -107,13 +111,15 @@
                     <h2 class="section-heading">Step 1: Create a function</h2>
                     <p align="justify">
                         Now we need to create the function to parse the XML formated input and convert it into JSON
-                        format. To do this, I create
+                        format. To do this, I created
                         a file in "lib/helper/" named "component.dart" to store my reusable component for the project.
-                        First we need to import the project to the
+                        First we need to import the package to the
                         file before using it.
                     </p>
-                    <a href="#!"><img class="img-fluid" src="xml2jsonpackage.png"
-                            alt="Import xml2json package to the project" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="xml2jsonpackage.png"
+                                alt="Import xml2json package to the project" /></a>
+                    </div>
                     <span class="caption text-muted">Since we also need a convert package to parse the XML data, it is
                         important to import dart:convert also into the file</span>
 
@@ -137,7 +143,9 @@ xml2JSON(String xmlData) {
     }
                     </pre>
                     </div>
-                    <a href="#!"><img class="img-fluid" src="xml2jsonfunction.png" alt="xml2json function" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="xml2jsonfunction.png" alt="xml2json function" /></a>
+                    </div>
                     <span class="caption text-muted">The function will pass the XML data in text format, then convert it
                         inside the function. The function will return the data in JSON format.
                     </span>
@@ -155,17 +163,23 @@ xml2JSON(String xmlData) {
                     </p>
 
 
-                    <a href="#!"><img class="img-fluid" src="result-package.png" alt="Import function file" /></a>
+                    <div align="center">
+                        <a href="#!"><img class="img-fluid" src="result-package.png" alt="Import function file" /></a>
+                    </div>
                     <span class="caption text-muted">Import the file where the function is</span>
 
                     <p align="justify">Then, about how to use the function you can refer to the image below.</p>
-                    <a href="function-used.png" target="_blank"><img class="img-fluid" src="function-used.png"
-                            alt="Instruction about how to use the function" /></a>
+                    <div align="center">
+                        <a href="function-used.png" target="_blank"><img class="img-fluid" src="function-used.png"
+                                alt="Instruction about how to use the function" /></a>
+                    </div>
                     <span class="caption text-muted">Follow along with the instruction given in the image. Click the
                         image to see the description clearly.</span>
 
                     <p align="justify">
-                        The XML data being used in my case looked like this.</p>
+                        Remember, in this case the input is in form of data readed from QR Code. The implementation
+                        might be a bit different for your application​, so don't just copy the code without adjusting it
+                        first. The XML data being used in my case is looked like this.</p>
                     <div class="center">
                         <a href="xmlresult.png" target="_blank"><img class="img-fluid" src="xmlresult.png"
                                 alt="Example of XML data" /></a>
@@ -300,6 +314,15 @@ Container(
     defaultRowListDetail('PPnBM',
         'Rp ${commify(data['detailTransaksi']['ppnbm'])},-')
                     </pre>
+
+                    <p align="justify">Then we can see the data being showed in our application like depicted below.
+                    </p>
+
+                    <div class="center" align="center">
+                        <a href="ss-app.png" target="_blank"><img class="img-fluid" src="ss-app.png"
+                                alt="The data showed in the application" /></a>
+                    </div>
+                    <span class="caption text-muted">Here we can see the data being showed in our application</span>
 
                     <p align="justify">It's up to you now. Good luck!
                     </p>
