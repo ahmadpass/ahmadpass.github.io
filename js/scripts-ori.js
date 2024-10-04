@@ -26,17 +26,17 @@ async function loadTemplateLayout() {
         await $("#navigation").load("../shared/navigation-1.html");
         await $("#footer").load("../shared/footer.html");
         await $("#postPreview").load("../shared/post-preview.html");
-        await $("#arrowup").load("shared/arrow-up.html");
+        await $("#arrowup").load("../shared/arrow-up.html");
     } else if (index == "2") {
         await $("#navigation").load("../../shared/navigation-2.html");
         await $("#footer").load("../../shared/footer.html");
         await $("#postPreview").load("../../shared/post-preview.html");
-        await $("#arrowup").load("shared/arrow-up.html");
+        await $("#arrowup").load("../../shared/arrow-up.html");
     } else if (index == "3") {
         await $("#navigation").load("../../../shared/navigation-3.html");
         await $("#footer").load("../../../shared/footer.html");
         await $("#postPreview").load("../../../shared/post-preview.html");
-        await $("#arrowup").load("shared/arrow-up.html");
+        await $("#arrowup").load("../../../shared/arrow-up.html");
     }
 
 
