@@ -21,22 +21,22 @@ async function loadTemplateLayout() {
         await $("#navigation").load("shared/navigation-0.html");
         await $("#footer").load("shared/footer.html");
         await $("#postPreview").load("shared/post-preview.html");
-        await $("#arrowup").load("shared/arrow-up.html");
+        await $("#arrowup").load("shared/arrow-up-0.html");
     } else if (index == "1") {
         await $("#navigation").load("../shared/navigation-1.html");
         await $("#footer").load("../shared/footer.html");
         await $("#postPreview").load("../shared/post-preview.html");
-        await $("#arrowup").load("../shared/arrow-up.html");
+        await $("#arrowup").load("../shared/arrow-up-1.html");
     } else if (index == "2") {
         await $("#navigation").load("../../shared/navigation-2.html");
         await $("#footer").load("../../shared/footer.html");
         await $("#postPreview").load("../../shared/post-preview.html");
-        await $("#arrowup").load("../../shared/arrow-up.html");
+        await $("#arrowup").load("../../shared/arrow-up-2.html");
     } else if (index == "3") {
         await $("#navigation").load("../../../shared/navigation-3.html");
         await $("#footer").load("../../../shared/footer.html");
         await $("#postPreview").load("../../../shared/post-preview.html");
-        await $("#arrowup").load("../../../shared/arrow-up.html");
+        await $("#arrowup").load("../../../shared/arrow-up-3.html");
     }
 
 
@@ -88,7 +88,7 @@ async function loadNav() {
 //     loadNav();
 // })
 
-// Function for arrow up
+// Function for arrow up ======================================
 // Get the button
 let mybutton = document.getElementById("myBtn");
 
