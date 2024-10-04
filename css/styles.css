@@ -88,8 +88,8 @@ codeBackground {
   bottom: 20px;
   right: 30px;
   /* z-index: 99; */
-  z-index: -1;
-  position: relative;
+  z-index: 1099;
+  /* position: relative; */
   font-size: 18px;
   border: none;
   outline: none;
